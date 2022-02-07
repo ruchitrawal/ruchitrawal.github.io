@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Undergarduate physics student at <a href="https://rkmvccrahara.org">Ramakrishna Mission Vivekananda Centenary College</a>
+  Junior Research Fellow at the <a href="https://iisc.ac.in/">Indian Institute of Science</a> (IISc.), Bangalore, India. :india:
 
 profile:
   align: right
@@ -15,12 +15,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hello! this is Rohan Deb Sarkar. Welcome to my website.
+I am currently working as a Junior Research Fellow at Visual Computing Lab (IISc.) where I am fortunate to be advised by Prof. Anirban Chakraborty. I have completed my bachelor's in Electronics and Communication Engineering from Delhi University, India.
 
-I am currently an undergraduate student at the physics department of Ramakrishna Mission Vivekananda Centenary College, Rahara, Kolkata. While Physics is my major subject, Mathematics and Computer Science are my minor subjects.
+I am interested in developing algorithms that can emulate powerful aspects of human cognition, such as robustness to novel inputs (machine learning robustness) and efficient transfer of prior knowledge to novel environments (learning with limited data). My current work is focused on training robust DNNs under challenging scenarios like the absence of training data, limited-supervision, etc.
 
-I finished my senior secondary (XII Standard) schooling from International Public School, Kolkata. My major subjects of focus were Physics, Mathematics and Computer Science.
-
-I am dedicated to science and keen to utilize my knowledge in the best interests of science, humankind, and this planet. My interests include Physics, Computer Science, and a bit of Mathematics.
-
-I am seeking to research and learn about things that are unknown to me.
+Please feel free to send me an email if you have any questions / discuss research directions / want to collaborate.
