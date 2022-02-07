@@ -3,16 +3,23 @@
 
 @string{aps = {American Physical Society,}}
 
-@article{Rawal2020ClimateAR,
-  abbr={CVPR-W},
-  title={Climate Adaptation: Reliably Predicting from Imbalanced Satellite Data},
-  author={Ruchit Rawal and Prabhu Pradhan},
-  journal={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
-  year={2020},
-  pages={350-359},
-  html={https://openaccess.thecvf.com/content_CVPRW_2020/html/w5/Rawal_Climate_Adaptation_Reliably_Predicting_From_Imbalanced_Satellite_Data_CVPRW_2020_paper.html},
-  abstract={The utility of aerial imagery (Satellite, Drones) has become an invaluable information source for cross-disciplinary applications, especially for crisis management. Most of the mapping and tracking efforts are manual which is resource-intensive and often lead to delivery delays. Deep Learning methods have boosted the capacity of relief efforts via recognition, detection, and are now being used for non-trivial applications. However the data commonly available is highly imbalanced (similar to other real-life applications) which severely hampers the neural network's capabilities, this reduces robustness and trust. We give an overview on different kinds of techniques being used for handling such extreme settings and present solutions aimed at maximizing performance on minority classes using a diverse set of methods (ranging from architectural tuning to augmentation) which as a combination generalizes for all minority classes. We hope to amplify cross-disciplinary efforts by enhancing model reliability.},
-  pdf={Rawal_Climate_Adaptation_Reliably_Predicting_From_Imbalanced_Satellite_Data_CVPRW_2020_paper.pdf}
+@article{pradhanrendezvous,
+  abbr={NeurIPS-W},
+  title={Rendezvous between Robustness and Dataset Bias: An empirical study},
+  author={Pradhan, Prabhu and Rawal, Ruchit and Kishan, Gopi},
+  journal={NeurIPS pre-registration Workshop, 2020},
+  html={https://preregister.science/},
+  abstract={We aim to shine a light on the effects of various techniques for perturbarial robustness on dataset-distribution bias (i.e. class imbalance). This relationship
+between data-skewness and such performance-enhancing measures remains largely
+unexplored. Deep learning models are seeing real-world deployment, hence it’s
+crucial to gauge the reliability of neural networks since undetected (side)effects
+of robustness-enhancement techniques on dataset-bias could be catastrophic. Our
+focus will also be on efficient/compact models, since studies have shown them to
+have relatively inferior generalization capability. We will evaluate methods for
+model robustness (against common corruptions as well as adversarial perturbations)
+by their effects on dataset bias through a variety of specialized metrics},
+  pdf={neurips_robust.pdf},
+  year={2020}
 }
 
 @article{rawalgeneralizing,
@@ -31,6 +38,47 @@ for the minority classes. Here, we briefly expand
 on the apparently ’vague’ effects of improving robustness for intrinsic generalization. We also shed
 light on standard vs metrics and their relations to
 the specific type of insights},
-pdf={ICML.pdf},
-selected={true}
+pdf={ICML.pdf}
+}
+
+
+@article{Rawal2020ClimateAR,
+  abbr={CVPR-W},
+  title={Climate Adaptation: Reliably Predicting from Imbalanced Satellite Data},
+  author={Ruchit Rawal and Prabhu Pradhan},
+  journal={2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)},
+  year={2020},
+  pages={350-359},
+  html={https://openaccess.thecvf.com/content_CVPRW_2020/html/w5/Rawal_Climate_Adaptation_Reliably_Predicting_From_Imbalanced_Satellite_Data_CVPRW_2020_paper.html},
+  abstract={The utility of aerial imagery (Satellite, Drones) has become an invaluable information source for cross-disciplinary applications, especially for crisis management. Most of the mapping and tracking efforts are manual which is resource-intensive and often lead to delivery delays. Deep Learning methods have boosted the capacity of relief efforts via recognition, detection, and are now being used for non-trivial applications. However the data commonly available is highly imbalanced (similar to other real-life applications) which severely hampers the neural network's capabilities, this reduces robustness and trust. We give an overview on different kinds of techniques being used for handling such extreme settings and present solutions aimed at maximizing performance on minority classes using a diverse set of methods (ranging from architectural tuning to augmentation) which as a combination generalizes for all minority classes. We hope to amplify cross-disciplinary efforts by enhancing model reliability.},
+  pdf={Rawal_Climate_Adaptation_Reliably_Predicting_From_Imbalanced_Satellite_Data_CVPRW_2020_paper.pdf}
+}
+
+
+
+
+@inproceedings{jambigi2021mmd,
+  abbr={BMVC},
+  title={MMD-ReID: A Simple but Effective solution for Visible-Thermal Person ReID},
+  author={Jambigi, Chaitra and Rawal, Ruchit and Chakraborty, Anirban},
+  booktitle={British Machine Vision Conference},
+  year={2021},
+  selected={true},
+  pdf={bmvc_mmdreid.pdf},
+abstract={Learning modality invariant features is central to the problem of Visible-Thermalcross-modal Person Reidentification (VT-ReID), where query and gallery images comefrom different modalities. Existing works implicitly align the modalities in pixel andfeature spaces by either using adversarial learning or carefully designing feature extrac-tion modules that heavily rely on domain knowledge. We propose a simple but effectiveframework, MMD-ReID, that reduces the modality gap by an explicit discrepancy re-duction constraint. MMD-ReID takes inspiration from Maximum Mean Discrepancy(MMD), a widely used statistical tool for hypothesis testing that determines the dis-tance between two distributions. MMD-ReID uses a novel margin-based formulation tomatch class-conditional feature distributions of visible and thermal samples to minimizeintra-class distances while maintaining feature discriminability. MMD-ReID is a simpleframework in terms of architecture and loss formulation. We conduct extensive exper-iments to demonstrate both qualitatively and quantitatively the effectiveness of MMD-ReID in aligning the marginal and class conditional distributions, thus learning bothmodality-independent and identity-consistent features. The proposed framework signif-icantly outperforms the state-of-the-art methods on SYSU-MM01 and RegDB datasets.
+},
+html={https://vcl-iisc.github.io/mmd-reid-web/}
+}
+
+@inproceedings{
+nayak2021_DAD,
+abbr={WACV},
+title={DAD: Data-free Adversarial Defense at Test Time},
+author={Nayak, G. K. and Rawal, Ruchit and Chakraborty, Anirban},
+booktitle={IEEE Winter Conference on Applications of Computer Vision},
+year={2022},
+selected={true},
+pdf={wacv_dad.pdf},
+abstract={Deep models are highly susceptible to adversarial attacks. Such attacks are carefully crafted imperceptible noises that can fool the network and can cause severe consequences when deployed. To encounter them, the model requires training data for adversarial training or explicit regularization-based techniques. However, privacy has become an important concern, restricting access to only trained models but not the training data (e.g. biometric data). Also, data curation is expensive and companies may have proprietary rights over it. To handle such situations, we propose a completely novel problem of 'test-time adversarial defense in absence of training data and even their statistics'. We solve it in two stages: a) detection and b) correction of adversarial samples. Our adversarial sample detection framework is initially trained on arbitrary data and is subsequently adapted to the unlabelled test data through unsupervised domain adaptation. We further correct the predictions on detected adversarial samples by transforming them in the Fourier domain and obtaining their low-frequency component at our proposed suitable radius for model prediction. We demonstrate the efficacy of our proposed technique via extensive experiments against several adversarial attacks and for different model architectures and datasets. For a non-robust Resnet-18 model pretrained on CIFAR-10, our detection method correctly identifies 91.42% of adversaries. Also, we significantly improve the adversarial accuracy from 0% to 37.37% with a minimal drop of 0.02% in clean accuracy on state-of-the-art `Auto Attack' without having to retrain the model.},
+html={https://sites.google.com/view/dad-wacv22}
 }
