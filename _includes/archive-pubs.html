@@ -1,0 +1,167 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="publication">
+  <article itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <div class="publication__title">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer">{{ title }}</a>
+      {% else %}
+        {{ title }}
+      {% endif %}
+      {% if post.banner %}
+        <span class="award-badge">{{ post.banner }}</span>
+      {% endif %}
+    </div>
+
+    <div class="publication__meta">
+      {% if post.venue %}
+        <span>{{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}</span>
+      {% endif %}
+      <div class="authors">{{ post.authors | replace: 'Ruchit Rawal', '<strong>Ruchit Rawal</strong>' }}</div>
+    </div>
+
+    <div class="publication__links">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer">🔗 Paper</a>
+      {% endif %}
+
+      {% if post.code %}
+        <a href="{{ post.code }}" target="_blank" rel="noopener noreferrer">💻 Code</a>
+      {% endif %}
+
+      {% if post.projectpage %}
+        <a href="{{ post.projectpage }}" target="_blank" rel="noopener noreferrer">🌐 Project Page</a>
+      {% endif %}
+
+      {% if post.dataset %}
+        <a href="{{ post.dataset }}" target="_blank" rel="noopener noreferrer">📊 Dataset</a>
+      {% endif %}
+
+      {% if post.absurl %}
+        <a href="{{ post.absurl }}" target="_blank" rel="noopener noreferrer">Abstract →</a>
+      {% endif %}
+
+      {% if post.citation %}
+        <button onclick="toggleCitation('{{ post.id }}')">📜 Cite</button>
+      {% endif %}
+    </div>
+
+    {% if post.citation %}
+      <div id="citation-{{ post.id }}" class="citation" style="display: none;">
+        {{ post.citation }}
+      </div>
+    {% endif %}
+
+    {% if post.excerpt %}
+      <div class="publication__excerpt">{{ post.excerpt }}</div>
+    {% endif %}
+  </article>
+</div>
+
+<style>
+  .publication {
+    margin: 3rem 0;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .publication:last-child {
+    border-bottom: none;
+  }
+
+  .publication__title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+    margin-bottom: 0.3rem;
+  }
+
+  .publication__title a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .publication__title a:hover {
+    color: #666;
+  }
+
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #fff9e6 0%, #fff0f0 100%);
+    color: #C17E12;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
+    margin-left: 1rem;
+    vertical-align: middle;
+    box-shadow: 0 2px 4px rgba(193, 126, 18, 0.1);
+    border: 1px solid rgba(193, 126, 18, 0.2);
+  }
+
+  .publication__meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.2rem 0;
+  }
+
+  .authors {
+    margin-top: 0.15rem;
+  }
+
+  .publication__links {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication__links a,
+  .publication__links button {
+    font-size: 0.9rem;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  .publication__links a:hover,
+  .publication__links button:hover {
+    color: #666;
+  }
+
+  .citation {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    padding: 1rem 0;
+  }
+
+  .publication__excerpt {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+  }
+</style>
+
+<script>
+  function toggleCitation(id) {
+    const citation = document.getElementById('citation-' + id);
+    citation.style.display = citation.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
